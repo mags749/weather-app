@@ -10,7 +10,7 @@ interface UpdateCityAction {
 
 interface UpdateCityDetailsAction {
   type: typeof UPDATE_CITY_DETAILS;
-  payload: ICityWeather[];
+  payload: ICityWeather;
 }
 
 export type WeatherActions = UpdateCityAction | UpdateCityDetailsAction;

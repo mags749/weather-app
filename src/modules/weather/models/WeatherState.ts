@@ -3,7 +3,7 @@ import ICityWeather from './ICityWeather';
 
 type WeatherState = {
   city: ICityState;
-  cityWeather: ICityWeather[];
+  cityWeather: ICityWeather;
 };
 
 export default WeatherState;

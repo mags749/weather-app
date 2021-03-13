@@ -34,6 +34,13 @@ const config: webpack.Configuration = {
           if (proxyReq.getHeader('origin')) {
             proxyReq.setHeader('origin', 'https://www.metaweather.com');
           }
+          if (proxyReq.getHeader('Host')) {
+            proxyReq.setHeader('Host', 'www.metaweather.com');
+          }
+          if (proxyReq.getHeader('Referer')) {
+            proxyReq.setHeader('Referer', 'https://www.metaweather.com');
+          }
+          // console.info(proxyReq);
         }
       }
     }

@@ -4,3 +4,9 @@ export const isEmpty = (input: any): boolean => {
   if (Array.isArray(input)) return input.length === 0;
   return !input || Object.keys(input).length === 0;
 };
+
+export const getTommorowsDate = (): string => {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 1);
+  return `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
+};

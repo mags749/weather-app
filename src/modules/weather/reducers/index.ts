@@ -3,7 +3,7 @@ import { WeatherState } from '../models';
 
 const initialState: WeatherState = {
   city: {},
-  cityWeather: []
+  cityWeather: {}
 };
 
 const weatherReducer = (
