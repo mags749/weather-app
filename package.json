@@ -89,7 +89,7 @@
     }
   },
   "lint-staged": {
-    "*": [
+    "src/**/*{ts,tsx}": [
       "prettier --write",
       "npm run eslintFix",
       "npm run eslint",
