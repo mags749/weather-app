@@ -1,0 +1,12 @@
+{
+  "API": {
+    "endpoints": [
+      {
+        "name": "weather-api",
+        "endpoint": "",
+        "environment": "dev",
+        "suburi": "/api/location"
+      }
+    ]
+  }
+}
