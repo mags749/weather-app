@@ -17,7 +17,7 @@
       /***/ module => {
         'use strict';
         eval(
-          'module.exports = JSON.parse(\'{"API":{"endpoints":[{"name":"weather-api","endpoint":"","environment":"dev","suburi":"/api/location"}]}}\');\n\n//# sourceURL=webpack://react-typescript-webpack/./config/config.json?'
+          'module.exports = JSON.parse(\'{"API":{"endpoints":[{"name":"weather-api","endpoint":"https://www.metaweather.com","environment":"dev","suburi":"/api/location"}]}}\');\n\n//# sourceURL=webpack://react-typescript-webpack/./config/config.json?'
         );
 
         /***/
