@@ -1,19 +1,19 @@
 interface ICityWeather {
-  id?: number;
-  weather_state_name?: string;
-  weather_state_abbr?: string;
-  wind_direction_compass?: string;
-  created?: Date;
-  applicable_date?: string;
-  min_temp?: number;
-  max_temp?: number;
-  the_temp?: number;
-  wind_speed?: number;
-  wind_direction?: number;
   air_pressure?: number;
+  applicable_date?: string;
+  created?: Date;
   humidity?: number;
-  visibility?: number;
+  id?: number;
+  max_temp?: number;
+  min_temp?: number;
   predictability?: number;
+  the_temp?: number;
+  visibility?: number;
+  weather_state_abbr?: string;
+  weather_state_name?: string;
+  wind_direction_compass?: string;
+  wind_direction?: number;
+  wind_speed?: number;
 }
 
 export default ICityWeather;

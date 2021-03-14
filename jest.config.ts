@@ -5,7 +5,8 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>/src/__test__/config/importFiles.ts'],
   moduleNameMapper: {
     '\\.((sa||sc||c)ss)$': 'identity-obj-proxy',
-    '\\.(jpg|jpeg|png|gif)$': '<rootDir>/src/__mocks__/fileMock.ts'
+    '\\.(jpg|jpeg|png|gif)$': '<rootDir>/src/__mocks__/fileMock.ts',
+    '^@/(.*)$': '<rootDir>/src/$1'
   }
 };
 

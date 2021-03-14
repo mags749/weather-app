@@ -80,4 +80,5 @@ const CityWeather: FC<ICityWeatherProps> = ({ city, cityWeather, latLong }) => {
     </div>
   );
 };
+
 export default CityWeather;
