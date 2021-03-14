@@ -3,7 +3,7 @@
     "endpoints": [
       {
         "name": "weather-api",
-        "endpoint": "https://www.metaweather.com",
+        "endpoint": "",
         "environment": "dev",
         "suburi": "/api/location"
       }
