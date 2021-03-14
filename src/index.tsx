@@ -1,17 +1,18 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import WeatherContainer from '@/modules/weather/containers/WeatherContainer';
 import configureStore from '@/store';
-import './index.scss';
+import '@/styles/index.scss';
 
-const App = (): ReactElement => <WeatherContainer />;
+const WeatherContainer = React.lazy(() => import('@/modules/weather/containers/WeatherContainer'));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={configureStore()}>
-      <App />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <WeatherContainer />
+      </React.Suspense>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
