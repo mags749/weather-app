@@ -1,10 +1,10 @@
 import React, { Component, ReactElement } from 'react';
 import { ConnectedProps, connect } from 'react-redux';
-import { DropDown } from '@/modules/common/input';
 import { RootState } from '@/store/reducer';
 import { getCityDetails } from '../actions';
 
 import '../styles/weather.scss';
+import WeatherForm from '../components/WeatherForm';
 
 const CityWeather = React.lazy(() => import('../components/CityWeather'));
 
@@ -13,7 +13,6 @@ const mapStateToProps = (state: RootState) => {
 
   return {
     city: city.title,
-    locationType: city.location_type,
     latLong: city.latt_long,
     cityWeather
   };
@@ -30,8 +29,6 @@ type iWeatherProps = ConnectedProps<typeof connector>;
 type WeatherState = {
   currentCity: string;
 };
-
-const cities = ['Gothenburg', 'Stockholm', 'Mountain View', 'London', 'New York', 'Berlin'];
 
 class WeatherContainer extends Component<iWeatherProps, WeatherState> {
   constructor(props: iWeatherProps) {
@@ -54,21 +51,15 @@ class WeatherContainer extends Component<iWeatherProps, WeatherState> {
   }
 
   render(): ReactElement {
-    const { cityWeather } = this.props;
     return (
       <div className="weather-container">
         <h1>Weather App</h1>
-        <div className="weather-form">
-          <DropDown
-            label="City"
-            name="cities"
-            options={cities}
-            onChange={e => this.onSelectChange(e)}
-            defaultValue={this.state.currentCity}
-          />
-        </div>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <CityWeather cityWeather={cityWeather} />
+        <WeatherForm
+          currentCity={this.state.currentCity}
+          onSelectChange={e => this.onSelectChange(e)}
+        />
+        <React.Suspense fallback={<h1>Loading...</h1>}>
+          <CityWeather {...this.props} />
         </React.Suspense>
       </div>
     );
